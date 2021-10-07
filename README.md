@@ -8,6 +8,8 @@ I used MAMP that run a Apache webserver
 ```
 https://gprd-proto.herokuapp.com
 
+This App is deployed on Heruko and use ClearDB to connect to the MySQL database.
+
 *** 
 to set up the Project:
 
