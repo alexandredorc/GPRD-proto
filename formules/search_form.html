@@ -1,0 +1,64 @@
+<div class="body-center" style="max-width:none;">
+    <form action="index.php?recherche=end_formule" method="POST">
+        <h1>Recherche d'une formule</h1>
+        <table class="table">
+            <tr>
+                <th>
+                    Réference Formule <input type="text" class="form-control" name="Ref_form" >
+                </th>
+                <th>
+                    Retenue <input type="text" class="form-control" name="Retenue">
+                </th>
+                <th>
+                    Validation RD<input type="text" class="form-control" name="Val_RD">
+                </th>
+                <th>
+                    Validation AR<input type="text" class="form-control" name="Val_AR">
+                </th>
+                <th>
+                    Annulée formule <input type="text" class="form-control" name="Annulee">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    Code R&D <input type="text" class="form-control" name="Code_RD">
+                </th>
+                <th>
+                    Code GPAO <input type="text" class="form-control" name="Code_GPAO">
+                </th>
+                <th>
+                    Date de validation <input type="date" class="form-control" name="Date_val">
+                </th>
+                
+                
+                <th>
+                    État de la formule
+                    <div class="form-check" >
+                        <input type="radio" class="form-check-input" id="com" name="Etat_form" value="1" >
+                        <label for="com" class="form-check-label" style="padding-left:20px;">Commercialisé</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="dev" name="Etat_form" value="2">
+                        <label for="dev" class="form-check-label" style="padding-left:20px;">En développement</label>
+                    </div>
+                </th>
+                <th>
+                    Année de commercialisation <input type="text" class="form-control" name="Annee_com">
+                </th>
+                
+            </tr>
+            <tr>
+                <th>
+                    information formule <input type="text" class="form-control" name="Info_form">
+                </th>
+                <th>
+                    Mode Opératoire <input type="text" class="form-control" name="Mode_ope">
+                </th>
+            </tr>
+        </table>
+        <button class="btn btn-primary">
+            Rechercher
+        </button>
+    </form>
+</div>

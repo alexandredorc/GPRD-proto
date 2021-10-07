@@ -1,0 +1,284 @@
+[type="reset"], [type="submit"], button, html [type="button"] {
+    -webkit-appearance: button;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+box-shadow:0 0 0 60px #60647a inset;
+-webkit-text-fill-color: #838383;
+}
+
+input[type=checkbox] {
+    -moz-appearance: textfield;
+    width:15px;
+  }
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+body{
+	text-align: center;
+	align-items: flex-start;
+	justify-content: center;
+	font-family: "Arial";
+	height:100%;
+}
+
+.body{
+    position: absolute;
+    top:100px;
+    height: calc(100% - 160px);
+    width: 100%;
+}
+
+.body-comp{
+    position: absolute;
+    display: flex;
+    top:100px;
+    padding: 0 30px;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+}
+
+.halfies {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+}
+.half {
+    flex:1;
+    margin: 2px;
+    padding: 20px;
+    display: flex;
+    background-color: #f5f5f5;
+    flex-direction: column;
+}
+
+.formules {
+    display: flex;
+    flex-direction: column;
+}
+
+.body-center{
+    flex:1;
+	background-color: #ffffff;
+	border-radius: 10px;
+    border: #9c9c9c 1px solid;
+    padding:20px;
+    margin: 20px;
+	box-shadow: 10px 10px 20px #a3a3a3;
+	display:flex;
+	flex-direction: column;
+	position: relative;
+    height: min-content;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.body-center::-webkit-scrollbar{
+    display: none;
+}
+
+input {
+    border: 1px solid #646464 ;
+	background-color: #ffffff;
+}
+.checkbox input{
+    float:right;
+}
+.checkbox p{
+    float:left;
+}
+
+
+.lone{
+   width: 30px;
+}
+.unique{
+    width: 55px;
+}
+.long{
+    width: 120px;
+}
+.v-long{
+    width: 150px;
+}
+.vv-long{
+    width: 200px;
+}
+table{
+    width: 95%;
+}
+tr{
+    
+    height: 0;
+    text-align: center;
+}
+thead{
+    width:100%; 
+}
+td{
+    height: 0;
+    margin: 2px;
+    width: 0;
+}
+th{
+    margin: 4px;
+    padding: 10px;
+}
+
+textarea{
+    resize:both;
+}
+
+table input{
+
+	box-sizing: border-box;
+    border: 1px solid #646464 ;
+    text-align: center;
+    width:100%;
+}
+
+#id_prod,#id_form{
+    max-width: 60px;
+}
+
+.foot {
+    z-index:5;
+    position: fixed; 
+    padding: 10px 10px 10px 10px; 
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    height: 60px; 
+    background: lightgrey; 
+}
+
+.erreur{
+	background-color: rgb(255, 255, 255);
+	border-radius:15px;
+	box-shadow: inset 0px 0px 15px #2c2c2c;
+	padding: 30px;
+	margin: 30px;
+	width: 50%;
+	text-align: center;
+}
+
+.head {
+    z-index:5;
+    position: fixed; 
+    padding: 10px 10px 10px 10px; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100px; 
+    background: rgb(0, 75, 146); 
+    display: flex;
+}
+.logo{
+    position: fixed;
+    top: 0;
+    left: 5px;
+    height: 100px;
+    width: 180px;
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+}
+.space{
+    width: 100px;
+}
+
+.menu{
+    position: fixed;
+    left: 250px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: calc(100% - 250px);
+    height: 100px;
+}
+.menu .menu-item {
+    display: inline-block;
+    padding: 20px 20px;
+    font-weight: bold;
+	position: relative;
+}
+.menu .menu-item ul{
+    padding: 10px;
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.692);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.466);
+    list-style: none;
+    width: 100%;
+    padding: 0;
+
+}
+.menu .menu-item ul {
+	display: none;
+	position: absolute;
+	margin: 0;
+	list-style: none;
+	width: 100%;  /* pour avoir la même largeur que la «racine» */
+}
+
+.menu .menu-item:hover ul,.menu .menu-item:focus ul {
+	display: block;
+}
+
+.menu h4,
+.menu a {
+	display: block;
+	margin: 0;
+	padding: 5px;
+	font-size: inherit;
+	color: black;
+	box-sizing: border-box;
+    font-weight: bold;
+}
+
+.menu .menu-item:hover h4,.menu .menu-item:focus h4 {
+	color: white;
+}
+
+.menu a:hover {
+	color: white;
+	background-color: rgba(68, 68, 68, 0.411);
+}
+
+
+
+
+div.table{
+    display: flex;
+    flex-direction: column;
+}
+
+div.thead .tbody .checkbox{
+    display: flex;
+    flex-direction: column;
+}
+div.ligne{
+    display:flex;
+    flex-direction: row;
+}
+div.ligne>div{
+    padding: 5px 20px;
+}
