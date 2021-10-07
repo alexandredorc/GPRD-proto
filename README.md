@@ -6,7 +6,7 @@ This app is made in HTML/CSS and with PHP using bootstrap in front-end,
 its a MySQL database that's setup using PHPMyAdmin
 I used MAMP that run a Apache webserver 
 ```
-https://gprd-proto.herokuapp.com/login/login.php
+https://gprd-proto.herokuapp.com
 
 *** 
 to set up the Project:
