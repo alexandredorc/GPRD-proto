@@ -26,6 +26,6 @@ $_SESSION['ref_form']=NULL;
             <?php
         }?>
         <form action="../formules/index.php?modif=add_form&main=true" method="POST"  style="display:flex;flex-direction:column;">
-            <button class="btn btn-success"><i class="bi bi-plus-lg" ></i> Ajouter</button>
+        <button class="btn btn-success"style="width:100px;"><strong><i class="bi bi-plus-lg" ></i> Ajouter</strong></button>
         </form>
     <?php } ?>

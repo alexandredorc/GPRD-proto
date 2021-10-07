@@ -51,7 +51,7 @@
     <?php
     if(isset($_SESSION['Code_MP'])){?>
         <div>
-            <button class="btn btn-primary" style="margin:20px 0px;" onclick="location.href = 'index.php?MP_comp=add'">
+            <button class="btn btn-primary" style="margin-bottom:20px;" onclick="location.href = 'index.php?MP_comp=add'">
             <i class="bi bi-plus-lg" ></i> Ajouter un composant à la MP
             </button>
         </div>

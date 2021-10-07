@@ -6,12 +6,12 @@
 ?>
 <h2>Produits finis</h2>
 <form action="index.php?modif=add_prod" method="POST"  style="display:flex;flex-direction:column; margin:20px;">
-    <button class="btn btn-success"><i class="bi bi-plus-lg" ></i> Ajouter</button>
+    <button class="btn btn-success"style="width:100px;"><strong><i class="bi bi-plus-lg" ></i> Ajouter</strong></button>
 </form>
 <h4>recherche rapide</h4>
 <form action="index.php?recherche=quick_prod"  method="POST">
-    <div class="input-group mb-3" style="padding:0 25% 0 0">
-        <input type="text" class="form-control" name="Code_RD" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group mb-3" style="padding:0 25% 0 0; ">
+        <input type="text" class="form-control" name="Code_RD" style="width:200px;">
         <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
         </div>
@@ -43,22 +43,38 @@
         if($data){
             //
             ?>
-        <form action="index.php?modif=produit" method="POST" style="display:flex;flex-direction:column;">
-       
-            Code R&D: 
-            <input type="text" readonly name="mod_prod" value= "<?php echo $data['Code_RD_prod'];?>"> </br>
-            Nom R&D: 
-            <input type="text" readonly value= "<?php echo $data['Nom_RD'];?>"> </br>
-            Gamme R&D: 
-            <input type="text" readonly value= "<?php echo $data['Gamme_RD'];?>"> </br>
-            Ligne R&D: 
-            <input type="text" readonly value= "<?php echo $data['Ligne_RD'];?>"> </br>
-            Catégorie de produit: 
-            <input type="text" readonly value= "<?php echo $data['Cat_prod'];?>"> </br>
-            Catégorie IFRA: 
-            <input type="text" readonly value= "<?php echo $data['Cat_IFRA_prod'];?>"> </br>
-
-            <button class="btn btn-warning" style="margin: 50px 0">Modifier</button>
+        <form action="index.php?modif=produit" method="POST" style="display:flex;flex-direction:column; width:70%;padding:50px;">
+            <table class="table" >
+                <colgroup>
+                    <col span="1" style="width: 15%;">
+                    <col span="1" style="width: 70%;">
+                </colgroup>
+                <tr style="text-align:left;">
+                    <td>Code R&D: </td>
+                    <td><h5><?php echo $data['Code_RD_prod'];?></h5></td>
+                </tr>
+                <tr style="text-align:left;">
+                    <td>Nom R&D: </td>
+                    <td><h5><?php echo $data['Nom_RD'];?></h5></td>
+                </tr>
+                <tr style="text-align:left;">
+                    <td>Gamme R&D: </td>
+                    <td><h5><?php echo $data['Gamme_RD'];?></h5></td>
+                </tr>
+                <tr style="text-align:left;">
+                    <td>Ligne R&D: </td>
+                    <td><h5><?php echo $data['Ligne_RD'];?></h5></td>
+                </tr>
+                <tr style="text-align:left;">
+                    <td>Catégorie de produit: </td>
+                    <td><h5><?php echo $data['Cat_prod'];?></h5></td>
+                </tr>
+                <tr style="text-align:left;">
+                    <td>Catégorie IFRA: </td>
+                    <td><h5><?php echo $data['Cat_IFRA_prod'];?></h5></td>
+                </tr>
+            </table>
+            <button class="btn btn-warning" style="width:100px;"><strong>Modifier</strong></button>
         </form>
         
         

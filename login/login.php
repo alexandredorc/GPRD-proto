@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include('../config_db.php');
 if (isset($_SESSION['name'])){
 	include('logout.php');
 }

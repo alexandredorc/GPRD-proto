@@ -26,7 +26,7 @@
     $synth=array();
     if(isset($_SESSION['Nom_INCI'])){?>
         <div>
-            <button class="btn btn-primary" style="margin:20px 0px;" onclick="location.href = 'index.php?comp_reg=add'">
+            <button class="btn btn-primary" style="margin-bottom:20px;" onclick="location.href = 'index.php?comp_reg=add'">
             <i class="bi bi-plus-lg" ></i> Ajouter une ligne de réglementation
             </button>
         </div>

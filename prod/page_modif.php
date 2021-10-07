@@ -21,7 +21,7 @@ elseif($_GET['modif']=='add_prod'){
 //Inserer une nouvelle formule
 
 elseif($_GET['modif']=='push_prod'){
-    $data=$bdd->query("SELECT Code_RD_prod FROM produits WHERE Code_RD_prod='".$_POST['Code_RD_prod']."'");
+    $data=$bdd->query("SELECT * FROM produits WHERE Code_RD_prod='".$_POST['Code_RD_prod']."'");
     $data=$data->fetchAll();
     if(count($data)!=0){
         header('Location: index.php?modif=add_prod&erreur=1');

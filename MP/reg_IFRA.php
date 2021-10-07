@@ -29,11 +29,12 @@
     }
 ?>
 
+
     <div>
     <?php
     if(isset($_SESSION['Code_MP'])){?>
         <div>
-            <button class="btn btn-primary" style="margin:20px 0px;" onclick="location.href = 'index.php?reg_IFRA=add'">
+            <button class="btn btn-primary" style="margin-bottom:20px;" onclick="location.href = 'index.php?reg_IFRA=add'">
             <i class="bi bi-plus-lg" ></i> Ajouter une réglementation IFRA
             </button>
         </div>
@@ -42,7 +43,12 @@
         if(count($res)!=0){?>
         <form action="index.php?reg_IFRA=save" method="POST">
         
-            <table class="table">
+            <table class="table" style="width:60%;">
+                <colgroup>
+                    <col span="1" style="width: 10%;">
+                    <col span="1" style="width: 20%;"> 
+                    <col span="1" style="width: 70%;">
+                </colgroup>
                 <thead>
                     <tr>
                         <th class="long">Catégorie IFRA</th>
@@ -72,7 +78,7 @@
                             <td hidden><input type="text" name="id_reg_IFRA_<?php echo $i;?>" value="<?php echo $res[$i]['id_reg_IFRA'] ?>"> </td>
                             
                             <td class="unique">
-                                <select class="custom-select" name="Cat_IFRA_MP_<?php echo $i;?>">
+                                <select class="custom-select IFRA" name="Cat_IFRA_MP_<?php echo $i;?>">
                                     <option value=""></option>
                                     <?php
                                     $cat=table_all_queries('Categorie_IFRA',$bdd);
@@ -113,7 +119,7 @@
             </div>
                 
         
-        <table class="table">
+        <table class="table" style="width:40%">
             
             <?php
             if(count($tab)!=0){
@@ -136,3 +142,17 @@
     <?php }
     } ?>
     </div>
+    <script>
+        $(".IFRA").on('change',function() {
+        var doc=this;
+        doc=doc.parentNode.parentNode.children
+        $.ajax({
+            type: "POST",
+            url: "func_update.php",
+            data: {arguments: this.value },
+            dataType: 'json' 
+        }).done(function(response){
+            doc[3].children[0].value=response['Type_prod_short'];
+        });  
+    });
+    </script>

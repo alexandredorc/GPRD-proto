@@ -25,6 +25,10 @@ input[type=checkbox] {
     -moz-appearance: textfield;
     width:15px;
   }
+textarea{
+    resize:both;
+}
+
 
 html, body {
     margin: 0;
@@ -77,11 +81,7 @@ body{
 .body-center{
     flex:1;
 	background-color: #ffffff;
-	border-radius: 10px;
-    border: #9c9c9c 1px solid;
-    padding:20px;
-    margin: 20px;
-	box-shadow: 10px 10px 20px #a3a3a3;
+    padding: 20px;
 	display:flex;
 	flex-direction: column;
 	position: relative;
@@ -282,3 +282,8 @@ div.ligne{
 div.ligne>div{
     padding: 5px 20px;
 }
+
+.btn_fixed{
+    position: fixed;
+}
+

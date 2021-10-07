@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../config_db.php');
 if(isset($_POST['email']) && isset($_POST['password']))
 {
 	include 'config.php';

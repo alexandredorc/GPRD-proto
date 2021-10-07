@@ -25,7 +25,7 @@
     <?php
     if(isset($_SESSION['Nom_INCI'])){?>
         <div>
-            <button class="btn btn-primary" style="margin:20px 0px;" onclick="location.href = 'index.php?notif_compo=add'">
+            <button class="btn btn-primary" style="margin-bottom:20px;" onclick="location.href = 'index.php?notif_compo=add'">
             <i class="bi bi-plus-lg" ></i> Ajouter une notification au composant
             </button>
         </div>
@@ -34,7 +34,15 @@
         if(count($res)!=0){?>
         <h5>Le composant a <?php echo count($res);?> lignes de réglementation </h5>
         <form action="index.php?notif_compo=save" method="POST">
-            <table class="table" style="font-size:10px; ">
+            <table class="table" style=" width: 90%;">
+                <colgroup>
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 10%;">
+                    <col span="1" style="width: 10%;">
+                    <col span="1" style="width: 10%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 15%;">
+                </colgroup>
                 <thead>
                     <tr>
                         <th class="vv-long">Catégorie de notification du composant</th>

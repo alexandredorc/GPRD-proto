@@ -85,7 +85,6 @@ if($_GET['MP']=='result'){
 			}
 
 		}
-		echo $sql;
 		$res=$bdd->query($sql);
         $donne=0;
 		?>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../config_db.php');
 if (!isset($_SESSION['name'])){
 	header('Location: ../login/logout.php');
 }
@@ -51,7 +52,7 @@ setcookie('auto_login',$_SESSION['user_id'],time()+60, '/', null, false, true);
 			include ('config.php');
 
 			if(isset($_POST['code_prod']) && $_POST['code_prod']!=""){
-				$_SESSION['id_prod']=table_single_nsearch('produits','Code_RD_prod',$_POST['code_prod'],$bdd);
+				$_SESSION['id_prod']=table_single_nsearch('produits','Code_RD',$_POST['code_prod'],$bdd);
 			}elseif (isset($_POST['id_prod']) && $_POST['id_prod']!=""){   
 				$_SESSION['id_prod']=(int)$_POST['id_prod'];
 			}
@@ -81,7 +82,7 @@ setcookie('auto_login',$_SESSION['user_id'],time()+60, '/', null, false, true);
 			
 					<?php
 						if(empty($_GET)){?>
-							<div class="panel-group body-center" style="overflow-y:auto;max-height: 90%;" >	<?php
+							<div class="body-center" style="overflow-y:auto;max-height: 90%;" >	<?php
 							include('produits.php');?>
 							</div>	<?php
 						}

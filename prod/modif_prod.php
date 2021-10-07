@@ -3,7 +3,7 @@
 if(isset($_POST['mod_prod'])){
     $_SESSION['mod_prod']=$_POST['mod_prod'];
 }elseif(!isset($_SESSION['mod_prod'])){
-    $_SESSION['mod_prod']="1";
+   // $_SESSION['mod_prod']="1";
 }
 
 $res=$bdd->query("select * from produits where Code_RD_prod='".$_SESSION['mod_prod']."'");
@@ -21,12 +21,13 @@ if(count($res)==1){
             <button class="btn btn-outline-secondary" ><i class="bi bi-search"></i></button></br>
         </div>
     </form>
-        
+    
     <h1>Modifier un produit</h1>
     <form action="index.php?modif=change_prod" method="POST">
     <table class="table">
         <tr>
             <th>
+                
                 Code R&D <input type="text" class="form-control" name="Code_RD_prod" value="<?php echo ($res)?$res['Code_RD_prod']:"";?>">
             </th>
             <th>

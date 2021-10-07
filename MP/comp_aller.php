@@ -35,7 +35,7 @@
     <?php
     if(isset($_SESSION['Code_MP'])){?>
         <div>
-            <button class="btn btn-primary" style="margin:20px 0px;" onclick="location.href = 'index.php?allerg=add'">
+            <button class="btn btn-primary" style="margin-bottom:20px;" onclick="location.href = 'index.php?allerg=add'">
             <i class="bi bi-plus-lg" ></i> Ajouter un allergène à la MP
             </button>
         </div>
@@ -45,7 +45,16 @@
             ?>
         <h5>La matière première a <?php echo count($res);?> allergènes </h5>
         <form action="index.php?allerg=save" method="POST">
-            <table class="table">
+            <table class="table" style="max-width:800px;">
+                <colgroup>
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 15%;"> 
+                    <col span="1" style="width: 15%;">
+                    <col span="1" style="width: 15%;"> 
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 5%;"> 
+                    <col span="1" style="width: 15%;">
+                </colgroup>
                 <thead>
                     <tr>
                         <th class="v-long">Nom INCI de l'Allergène</th>

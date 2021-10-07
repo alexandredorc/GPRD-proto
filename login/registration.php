@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+include('../config_db.php');
 $_SESSION['temp_name']=$_POST['name'];
 $_SESSION['temp_email']=$_POST['email'];
 if($_POST['name']!==""){

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../config_db.php');
 if (!isset($_SESSION['name'])){
 	header('Location: ../login/logout.php');
 }
@@ -19,11 +20,14 @@ include('config.php');
 if (isset($_POST['ref_form'])){
     $_SESSION['ref_form']=$_POST['ref_form'];
 }
-$res=$bdd->query("select * from formules where Ref_form='".$_SESSION['ref_form']."'");
-$res=$res->fetch();
-if($res){
+if(isset($_SESSION['ref_form'])){
+	$res=$bdd->query("select * from formules where Ref_form='".$_SESSION['ref_form']."'");
+	$res=$res->fetch();
+	if($res){
 	$_SESSION['id_prod']=table_single_nsearch('produits','Code_RD_prod',$res['Code_RD'],$bdd);
 }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,14 +89,14 @@ if($res){
 			
 					<?php
 						if(empty($_GET)){?>
-							<div class="panel-group body-center" style="overflow-y:auto;max-height: 90%;" >	<?php
+							<div class="body-center" style="overflow-y:auto;max-height: 90%;" >	<?php
 							include('formules.php');?>
 							</div>	<?php
 							
 						}
 						else{
 							include('form_short.php');?>
-							<div class="panel-group body-center" style="overflow-y:auto;max-height: 65%;" >	<?php
+							<div class="body-center" style="overflow-y:auto;max-height: 65%;" >	<?php
 								if(isset($_GET['appel'])){
 									include('appel_form.php');
 								}

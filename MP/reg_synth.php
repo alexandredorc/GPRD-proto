@@ -10,17 +10,16 @@ function notempty($var){
 
 
 
-    <h2 class=" title">
-            Réglementations de la matière première 
-
-    </h2>
 
     <?php 
     $pays=array_column(get_single_attribut('pays_organism','Pays_org',$bdd), 'Pays_org');
     $data=table_single_query('matieres_premieres','Code_MP',$_SESSION['Code_MP'],$bdd);
     include('reg_comps.php');
     ?>
-    <textarea cols="100" rows="4" style="overflow:initial;"><?php echo $data['Synt_MP']?></textarea>
+    <h4>
+        Synthèse réglementaire MP
+    </h4>
+    <textarea cols="100" rows="4" style="overflow:initial; width:500px"><?php echo $data['Synt_MP']?></textarea>
     <?php
     if( true || $_SESSION['reg_synth']){ ?>    
     <div class="halfies">

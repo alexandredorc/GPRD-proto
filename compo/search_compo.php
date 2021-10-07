@@ -8,9 +8,6 @@
                 <th>Nom INCI Composant
                     <input type="text" name="Nom_INCI" class="form-control" >
                 </th>
-                <th>Fonction principale
-                    <input type="text" name="Fonct_prin" class="form-control" >
-                </th>
                 <th>
                     Fonction Principale
                     <select class="custom-select" name="Fonct_prin">
@@ -36,6 +33,9 @@
                         </option>
                         <?php } ?>
                     </select>
+                    </th>
+                    <th>Fonction principale
+                        <input type="text" name="Info_supp" class="form-control" >
                     </th>
             </tr>
             <tr>

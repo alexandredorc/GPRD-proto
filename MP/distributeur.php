@@ -42,7 +42,7 @@
     <?php
     if(isset($_SESSION['Code_MP'])){?>
         <div>
-            <button class="btn btn-primary" style="margin:20px 0px;" onclick="location.href = 'index.php?distri=add'">
+            <button class="btn btn-primary" style="margin-bottom:20px;" onclick="location.href = 'index.php?distri=add'">
             <i class="bi bi-plus-lg" ></i> Ajouter un distributeur à la MP
             </button>
         </div>
@@ -51,7 +51,12 @@
         if(count($res)!=0){?>
         <h5>La matière première a <?php echo count($res);?> distributeurs </h5>
         <form action="index.php?distri=save" method="POST">
-            <table class="table">
+            <table class="table" style="width:70%;">
+                <colgroup>
+                    <col span="1" style="width: 10%;">
+                    <col span="1" style="width: 45%;"> 
+                    <col span="1" style="width: 45%;">
+                </colgroup>
                 <thead>
                     <tr>
                         <th class="lone">N°</th>
@@ -63,9 +68,9 @@
                     <?php
                     $statut=get_single_attribut('class_distri_MP','Statut_REACH',$bdd);
                     for($i=0;$i<count($res);$i++){
-                        $distr=table_all_queries('distributeur_MP',$bdd);
+                        $distr=$bdd->query("SELECT * FROM distributeur_MP ORDER BY Nom_distributeur ")->fetchAll();
                         ?>
-                        <tr>
+                        <tr style="text-align:left;">
                             <td hidden><input type="text" name="id_class_distri_<?php echo $i;?>" value="<?php echo $res[$i]['id_class_distri'] ;?>"> </td>
                             <td><input class="lone"  name="N_distri_MP_<?php echo $i; ?>" type="text"  value="<?php echo ($i+1); ?>"></td>
                             <td>
@@ -89,7 +94,7 @@
                             </td>
                             <td style="width: 15px;">
                                 <a class="btn btn-danger" style="border-radius:35%; padding: 0 .25rem;" onclick="location.href = 'index.php?distri=trash&id=<?php echo $res[$i]['id_class_distri'];?>'">
-                                <i class="bi bi-x"></i>
+                                    <i class="bi bi-x"></i>
                                 </a>
                             </td>
                         </tr>

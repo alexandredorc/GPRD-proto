@@ -1,6 +1,8 @@
 
 <?php 
 session_start();
+
+include('../config_db.php');
 include('config.php');
 if(isset($_GET['add'])){
     if($_GET['add']!=-1){

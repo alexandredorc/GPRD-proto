@@ -41,7 +41,7 @@
     <?php
     if(isset($data)) { ?>
         <div>
-            <button class="btn btn-primary" style="margin:20px 0px;" onclick="location.href = 'index.php?notif_prod=add'">
+            <button class="btn btn-primary" style="margin-bottom:20px;" onclick="location.href = 'index.php?notif_prod=add'">
             <i class="bi bi-plus-lg" ></i> Ajouter une Notification
             </button>
         </div>
@@ -50,7 +50,7 @@
         $res= table_to_table('produits','cat_notif_prod','Code_RD_notif','Code_RD_notif',$data['Code_RD_prod'],$bdd)->fetchAll();
         if(count($res)!=0){
             ?>Le produits a <?php echo count($res);?> catégories de notification </br>
-                <table class="table">
+                <table class="table" style="max-width:600px;">
                 <thead>
                     <tr>
                         <th class="vv-long">Catégorie notification</th>

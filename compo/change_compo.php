@@ -78,11 +78,12 @@ if($_GET['compo']=='result'){
 					$sql="$sql AND $attr='$val'";
 				}else{
                     $val=($_POST[$attr]=='on')?'VRAI':$_POST[$attr];
-					$sql="$sql AND $attr LIKE '%$val%'";
+					$sql="$sql AND $attr LIKE \"%$val%\"";
 				}
 			}
 		}
 		$res=$bdd->query($sql);
+		echo $sql;
         $donne="";
 		?>
 		<div class="body-center" style=" padding-bottom:100px;">

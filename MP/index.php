@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../config_db.php');
 if (!isset($_SESSION['name'])){
 	header('Location: ../login/logout.php');
 }
@@ -77,14 +78,14 @@ setcookie('auto_login',$_SESSION['user_id'],time()+60, '/', null, false, true);
 				
 				<?php
 					if(isset($_GET['code']) || empty($_GET)){?>
-						<div class="panel-group body-center" style="overflow-y:auto;max-height: 90%;" >	<?php
+						<div class="body-center" style="overflow-y:auto;max-height: 90%;" >	<?php
 							include('matiere_prem.php');?>
 						</div>	<?php
 					}
 					else{
 						include('MP_short.php');//calc(95% - 200px);
 						?>
-						<div class="panel-group body-center" style="overflow-y:auto;max-height:calc(95% - 200px); " >	<?php
+						<div class="body-center" style="overflow-y:auto;max-height:calc(95% - 200px); " >	<?php
 							
 							if(isset($_GET['distri'])){
 								include('distributeur.php');

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../config_db.php');
 if (!isset($_SESSION['name'])){
 	header('Location: ../login/logout.php');
 }
@@ -71,22 +72,32 @@ if(isset($_GET)){
 			
 		</div>
 		<div class="body" >
-            <div class="panel-group body-center" style="overflow-y:auto;max-height: 90%;" >
-                            <?php 
-
+            <div class="body-center" style="overflow-y:auto;max-height: 90%;" >
+                <?php 
                 
                 if(isset($_POST['ref_planche'])){
                     $_SESSION['ref_planche']=$_POST['ref_planche'];
                 }
-                $_SESSION['ref_planche']=1;
-                $res=$bdd->query("select * from comp_etiq_MP where Ref_planche='".$_SESSION['ref_planche']."'");
-                $res=$res->fetchAll();
-
-                if(isset($_SESSION['ref_planche'])){?>
+                
+                ?>
                     <h2>Etiquettes MP</h2>
-                    <div></div>
+                    
+                    <div style="margin-left:100px;margin-bottom:10px;">
+                        <h4>
+                            Référence de la planche
+                        </h4>
+                        <form action="index.php" method="POST">
+                            <input class="form-control" style="width:70px;" name="ref_planche" type="text" value="<?php echo (isset($_SESSION['ref_planche']))?$_SESSION['ref_planche']:""; ?>">
+                        </form>
+                       
+                    </div>
+                    <?php
+                    if(isset($_SESSION['ref_planche'])){
+                    $res=$bdd->query("select * from comp_etiq_MP where Ref_planche='".$_SESSION['ref_planche']."'");
+                    $res=$res->fetchAll();?>
+
                     <form action="index.php?save=true" method="POST">
-                        <table class="table" style="margin:50px; width:calc(100% - 100px)">
+                        <table class="table" style="margin:0 50px; width:calc(100% - 100px)">
                             <thead>
                                 <tr>
                                     <th>Code MP</th>
@@ -102,13 +113,13 @@ if(isset($_GET)){
                                     $nom=$nom->fetch();?>
                                     <tr>
                                         <td style="width:110px;">
-                                            <input type="text" name="Code_MP_etiq_<?php echo $i;?>" class="MP" value="<?php echo $res[$i]['Code_MP_etiq'] ?>">
+                                            <input type="text" class="form-control MP" name="Code_MP_etiq_<?php echo $i;?>" class="MP" value="<?php echo $res[$i]['Code_MP_etiq'] ?>">
                                         </td>
                                         <td style="width:calc(100% - 330px);">
-                                            <input type="text" readonly value="<?php echo ($nom)?$nom['Nom_com_MP']:"" ?>">
+                                            <input type="text" class="form-control" readonly value="<?php echo ($nom)?$nom['Nom_com_MP']:"" ?>">
                                         </td>
                                         <td style="width:110px;">
-                                            <input type="text" name="index_etiq_<?php echo $i;?>" value="<?php echo $res[$i]['index_etiq'] ?>">
+                                            <input type="text" class="form-control" name="index_etiq_<?php echo $i;?>" value="<?php echo $res[$i]['index_etiq'] ?>">
                                         </td>
                                         <td style="width:110px;">
                                             <input type="date" name="Date_exp_<?php echo $i;?>" value="<?php echo $res[$i]['Date_exp'] ?>">
@@ -144,6 +155,7 @@ if(isset($_GET)){
 <script>
     $(".MP").on('input',function() {
         var doc=this;
+
         doc=doc.parentNode.parentNode.children
         $.ajax({
             type: "POST",
@@ -151,7 +163,6 @@ if(isset($_GET)){
             data: {arguments: this.value },
             dataType: 'json' 
         }).done(function(response){
-            
             doc[1].children[0].value=response['Nom_com_MP'];
         });
        

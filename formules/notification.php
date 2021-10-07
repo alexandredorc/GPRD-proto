@@ -28,7 +28,7 @@
 <?php
 if(isset($_SESSION['ref_form'])) { ?>
     <div>
-        <button class="btn btn-primary" style="margin:20px 0px;" onclick="location.href = 'index.php?notif=add'">
+        <button class="btn btn-primary" style="margin-bottom:20px;" onclick="location.href = 'index.php?notif=add'">
         <i class="bi bi-plus-lg" ></i> Ajouter une notification
         </button>
     </div>
@@ -64,25 +64,27 @@ if(isset($_SESSION['ref_form'])) { ?>
                         </td>
                         </td>
                         <td class="vv-long"><textarea name="Nom_com_notif_<?php echo $i;?>" cols="30" rows="2"><?php echo $res[$i]['Nom_com_notif'] ?></textarea>
-                        <td class="vv-long"><input  type="text" name="N_enre_notif_<?php echo $i;?>" value="<?php echo $res[$i]['N_enre_notif'] ?>"></td>
-                        <td class="vv-long"><input  type="text" name="N_enre_ancien_notif_<?php echo $i;?>" value="<?php echo $res[$i]['N_enre_ancien_notif'] ?>"></td>
-                        <td>
-                        <table class="table">
+                        <td class="v-long"><input  type="text" name="N_enre_notif_<?php echo $i;?>" value="<?php echo $res[$i]['N_enre_notif'] ?>"></td>
+                        <td class="v-long"><input  type="text" name="N_enre_ancien_notif_<?php echo $i;?>" value="<?php echo $res[$i]['N_enre_ancien_notif'] ?>"></td>
+                        <td width="300px">
+                        <table class="table" >
                             <tr>
                                 <td>Saisie le: </td>
                                 <td><input  type="date" name="Date_notif_<?php echo $i;?>" value="<?php echo $res[$i]['Date_notif'] ?>"></td>
                             </tr>
                             <tr>
                                 <td>
+                                Validation RD
                                     <input  type="checkbox" name="Notif_Val_RD_<?php echo $i;?>" <?php echo ($res[$i]['Notif_Val_RD']=="VRAI")?"checked":"";?> >
-                                    Validation RD
+                                    
                                 </td>
                                 <td><input  type="date" name="Date_val_RD_<?php echo $i;?>" value="<?php echo $res[$i]['Date_val_RD'] ?>"></td>
                             </tr>
                             <tr>
                             <td>
+                            Validation AR
                                 <input type="checkbox" name="Notif_Val_AR_<?php echo $i;?>" <?php echo ($res[$i]['Notif_Val_AR']=="VRAI")?"checked":"";?> >
-                                Validation AR
+                                
                             </td>
                                 <td><input  type="date" name="Date_val_AR_<?php echo $i;?>" value="<?php echo $res[$i]['Date_val_AR'] ?>"></td>
                             </tr>
@@ -100,7 +102,7 @@ if(isset($_SESSION['ref_form'])) { ?>
         </table>
     <?php } ?>
         <div>
-            <button class="btn btn-success" style="margin:20px 0px;">
+            <button class="btn btn-success" style="margin:20px 0;">
             Enregistrer
             </button>
         </div>

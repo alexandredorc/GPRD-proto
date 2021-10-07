@@ -1,5 +1,5 @@
 <?php
-
+include('../config_db.php');
 include ('config.php');
 if($_POST['functionname']=='update'){
     $data=table_single_query('matieres_premieres','Code_MP',$_POST['arguments'],$bdd);
